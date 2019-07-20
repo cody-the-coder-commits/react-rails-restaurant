@@ -42,73 +42,35 @@ const mergeProps = (state, actions) => ({
       console.log(error);
     });
   },
-  postRequest: function (url, body) {
-    const axiosRequest = axios.create({
-      headers: this.tokenAuthHeaders
-    });
-
-    return axiosRequest.post("http://localhost:3001" + url, body).then((response) => {
+  apiRequest: function(url, method, body = {}){
+    return axios({ method: method,
+                   url: "http://localhost:3001" + url,
+                   data: body,
+                   headers: this.tokenAuthHeaders
+                })
+      .then((response) => {
+        console.log(response.headers);
       if ('access-token' in response.headers && response.headers['access-token'].length > 0){
         this.updateToken({'access-token' : response.headers['access-token']});
       }
-      console.log("post request")
       console.log(response)
       return response;
     })
     .catch(function (error) {
       console.log(error);
     });
+  },
+  postRequest: function (url, body) {
+    return this.apiRequest(url, 'post', body)
   },
   patchRequest: function (url, body) {
-    const axiosRequest = axios.create({
-      headers: this.tokenAuthHeaders
-    });
-
-    return axiosRequest.patch("http://localhost:3001" + url, body).then((response) => {
-      if ('access-token' in response.headers && response.headers['access-token'].length > 0){
-        this.updateToken({'access-token' : response.headers['access-token']});
-      }
-      console.log("post request")
-      console.log(response)
-      return response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    return this.apiRequest(url, 'patch', body)
   },
   deleteRequest: function (url, body) {
-    const axiosRequest = axios.create({
-      headers: this.tokenAuthHeaders
-    });
-
-    return axiosRequest.delete("http://localhost:3001" + url, body).then((response) => {
-      if ('access-token' in response.headers && response.headers['access-token'].length > 0){
-        this.updateToken({'access-token' : response.headers['access-token']});
-      }
-      console.log("post request")
-      console.log(response)
-      return response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    return this.apiRequest(url, 'delete', body)
   },
   getRequest: function (url) {
-    const axiosRequest = axios.create({
-      headers: this.tokenAuthHeaders
-    });
-
-    return axiosRequest.get("http://localhost:3001" + url).then((response) => {
-      if ('access-token' in response.headers && response.headers['access-token'].length > 0){
-        this.updateToken({'access-token' : response.headers['access-token']});
-      }
-      console.log("get request")
-      console.log(response)
-      return response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    return this.apiRequest(url, 'get')
   },
 });
 

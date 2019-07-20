@@ -1528,3 +1528,518 @@ Processing by RestaurantsController#index as HTML
 Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:02:30 -0700
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (5.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 28ms (Views: 13.4ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2019-07-20 00:02:33 -0700
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"mark@mark.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mark@mark.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'mark@mark.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$/k/zv/wjvH.j.Zna963S5ueehAK2GFAjOPKFR9iufjebADIne.Vle\",\"expiry\":1564815754}}"], ["updated_at", "2019-07-20 07:02:34.645742"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2019-07-20 07:02:34.657568"], ["last_sign_in_at", "2019-07-20 06:33:44.777585"], ["sign_in_count", 5], ["updated_at", "2019-07-20 07:02:34.660794"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"expiry\":1564815754,\"last_token\":\"$2a$12$/k/zv/wjvH.j.Zna963S5ueehAK2GFAjOPKFR9iufjebADIne.Vle\",\"updated_at\":\"2019-07-20T07:02:34.682Z\"}}"], ["updated_at", "2019-07-20 07:02:35.175152"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 1369ms (Views: 0.5ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:02:35 -0700
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:02:36 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (2.2ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (2.2ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 18ms (Views: 1.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-07-20 00:02:41 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"rating"=>"3", "user_comment"=>"hello", "restaurant_id"=>1}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mark@mark.com"], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "user_comment", "user_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 3], ["user_comment", "hello"], ["user_id", 1], ["restaurant_id", 1], ["created_at", "2019-07-20 07:02:41.871779"], ["updated_at", "2019-07-20 07:02:41.871779"]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (115.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/review.rb:7
+  [1m[36mRestaurant Update (1.0ms)[0m  [1m[33mUPDATE "restaurants" SET "average_rating" = $1, "updated_at" = $2 WHERE "restaurants"."id" = $3[0m  [["average_rating", 3], ["updated_at", "2019-07-20 07:02:42.000916"], ["id", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MIN("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:8
+  [1m[36mRestaurant Update (0.5ms)[0m  [1m[33mUPDATE "restaurants" SET "updated_at" = $1, "lowest_rating" = $2 WHERE "restaurants"."id" = $3[0m  [["updated_at", "2019-07-20 07:02:42.008359"], ["lowest_rating", 3], ["id", 1]]
+  ↳ app/models/review.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:9
+  [1m[36mRestaurant Update (0.6ms)[0m  [1m[33mUPDATE "restaurants" SET "updated_at" = $1, "highest_rating" = $2 WHERE "restaurants"."id" = $3[0m  [["updated_at", "2019-07-20 07:02:42.014687"], ["highest_rating", 3], ["id", 1]]
+  ↳ app/models/review.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:9
+No template found for ReviewsController#create, rendering head :no_content
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"}}"], ["updated_at", "2019-07-20 07:02:42.406086"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 204 No Content in 944ms (ActiveRecord: 126.9ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:02:42 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:03:24 -0700
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (2.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:03:33 -0700
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (4.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 12ms (Views: 5.2ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2019-07-20 00:03:35 -0700
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"mark@mark.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mark@mark.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'mark@mark.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$QgR.uww/dpsm.XfrBaWA0.fEw0aKSj877aR2wEpIx5eLO0wGn8l1m\",\"expiry\":1564815816}}"], ["updated_at", "2019-07-20 07:03:36.550200"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2019-07-20 07:03:36.558296"], ["last_sign_in_at", "2019-07-20 07:02:34.657568"], ["sign_in_count", 6], ["updated_at", "2019-07-20 07:03:36.560164"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"expiry\":1564815816,\"last_token\":\"$2a$12$QgR.uww/dpsm.XfrBaWA0.fEw0aKSj877aR2wEpIx5eLO0wGn8l1m\",\"updated_at\":\"2019-07-20T07:03:36.573Z\"}}"], ["updated_at", "2019-07-20 07:03:37.002485"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 1227ms (Views: 0.6ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:03:37 -0700
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/restaurants/3" for 127.0.0.1 at 2019-07-20 00:03:38 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSQL (2.5ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (2.6ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 3], ["id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 22ms (Views: 4.8ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-07-20 00:03:45 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"rating"=>"4", "user_comment"=>"hello", "restaurant_id"=>3}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mark@mark.com"], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mRestaurant Load (1.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "user_comment", "user_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 4], ["user_comment", "hello"], ["user_id", 1], ["restaurant_id", 3], ["created_at", "2019-07-20 07:03:46.228705"], ["updated_at", "2019-07-20 07:03:46.228705"]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:7
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MIN("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/review.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:8
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:8
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT MAX("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  ↳ app/models/review.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:9
+No template found for ReviewsController#create, rendering head :no_content
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"}}"], ["updated_at", "2019-07-20 07:03:46.627222"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 204 No Content in 739ms (ActiveRecord: 19.9ms)
+
+
+Started GET "/restaurants/3" for 127.0.0.1 at 2019-07-20 00:03:46 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (0.9ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 3], ["id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 10ms (Views: 2.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/restaurants/3" for 127.0.0.1 at 2019-07-20 00:04:30 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSQL (1.5ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (1.3ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 3], ["id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 21ms (Views: 5.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2019-07-20 00:04:57 -0700
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"mark@mark.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mark@mark.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'mark@mark.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"},\"YCO45-h7K2ZIwPDWEOob1Q\":{\"token\":\"$2a$12$DHaeJgVOfD9Z/O3ny2Osc.iVqgrt65.xFlqybACBi1eG2df6n4zPG\",\"expiry\":1564815898}}"], ["updated_at", "2019-07-20 07:04:58.479213"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2019-07-20 07:04:58.488311"], ["last_sign_in_at", "2019-07-20 07:03:36.558296"], ["sign_in_count", 7], ["updated_at", "2019-07-20 07:04:58.490514"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.4ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"},\"YCO45-h7K2ZIwPDWEOob1Q\":{\"token\":\"$2a$12$.ooZ1m4aIO9gIiL1ZPj5g.1V9AkdtHzyIYYr9jSIVtdqOcsU/d/yu\",\"expiry\":1564815898,\"last_token\":\"$2a$12$DHaeJgVOfD9Z/O3ny2Osc.iVqgrt65.xFlqybACBi1eG2df6n4zPG\",\"updated_at\":\"2019-07-20T07:04:58.504Z\"}}"], ["updated_at", "2019-07-20 07:04:58.965873"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 1218ms (Views: 0.4ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:04:59 -0700
+Processing by RestaurantsController#index as HTML
+  Parameters: {"restaurant"=>{}}
+  [1m[36mRestaurant Load (1.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:05:01 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1", "restaurant"=>{}}
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (1.7ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-07-20 00:05:06 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"rating"=>"1", "user_comment"=>"goodbye", "restaurant_id"=>1}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mark@mark.com"], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "user_comment", "user_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 1], ["user_comment", "goodbye"], ["user_id", 1], ["restaurant_id", 1], ["created_at", "2019-07-20 07:05:06.795101"], ["updated_at", "2019-07-20 07:05:06.795101"]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/review.rb:7
+  [1m[36mRestaurant Update (0.5ms)[0m  [1m[33mUPDATE "restaurants" SET "average_rating" = $1, "updated_at" = $2 WHERE "restaurants"."id" = $3[0m  [["average_rating", 2], ["updated_at", "2019-07-20 07:05:06.807231"], ["id", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT MIN("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:8
+  [1m[36mRestaurant Update (0.6ms)[0m  [1m[33mUPDATE "restaurants" SET "updated_at" = $1, "lowest_rating" = $2 WHERE "restaurants"."id" = $3[0m  [["updated_at", "2019-07-20 07:05:06.813599"], ["lowest_rating", 1], ["id", 1]]
+  ↳ app/models/review.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MAX("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:9
+No template found for ReviewsController#create, rendering head :no_content
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"},\"YCO45-h7K2ZIwPDWEOob1Q\":{\"token\":\"$2a$12$FlKCCszRcluYWfizDtnJleyb8V8qliBVZz8tKBwIOULhXNLDHgkXy\",\"expiry\":1564815906,\"last_token\":\"$2a$12$.ooZ1m4aIO9gIiL1ZPj5g.1V9AkdtHzyIYYr9jSIVtdqOcsU/d/yu\",\"updated_at\":\"2019-07-20T07:05:06.841Z\"}}"], ["updated_at", "2019-07-20 07:05:07.189722"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 204 No Content in 756ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:05:07 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1", "restaurant"=>{}}
+  [1m[35mSQL (0.9ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (0.9ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:06:53 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1", "restaurant"=>{}}
+  [1m[35mSQL (4.4ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (19.3ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 31ms (Views: 2.0ms | ActiveRecord: 23.7ms)
+
+
+Started POST "/auth/sign_in.json" for 127.0.0.1 at 2019-07-20 00:07:02 -0700
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"mark@mark.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mark@mark.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'mark@mark.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :format, :session
+Unpermitted parameters: :format, :session
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (8.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"},\"YCO45-h7K2ZIwPDWEOob1Q\":{\"token\":\"$2a$12$FlKCCszRcluYWfizDtnJleyb8V8qliBVZz8tKBwIOULhXNLDHgkXy\",\"expiry\":1564815906,\"last_token\":\"$2a$12$.ooZ1m4aIO9gIiL1ZPj5g.1V9AkdtHzyIYYr9jSIVtdqOcsU/d/yu\",\"updated_at\":\"2019-07-20T07:05:06.841Z\"},\"T7avWL2sFWUIrL6z01GJww\":{\"token\":\"$2a$12$1FkNeyfS3UAEiIDpp9f1yuqLXO4HZuxuTFsd47wOlM/5UyY.XfDNu\",\"expiry\":1564816022}}"], ["updated_at", "2019-07-20 07:07:02.951074"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (5.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2019-07-20 07:07:03.001843"], ["last_sign_in_at", "2019-07-20 07:04:58.488311"], ["sign_in_count", 8], ["updated_at", "2019-07-20 07:07:03.010436"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"},\"YCO45-h7K2ZIwPDWEOob1Q\":{\"token\":\"$2a$12$FlKCCszRcluYWfizDtnJleyb8V8qliBVZz8tKBwIOULhXNLDHgkXy\",\"expiry\":1564815906,\"last_token\":\"$2a$12$.ooZ1m4aIO9gIiL1ZPj5g.1V9AkdtHzyIYYr9jSIVtdqOcsU/d/yu\",\"updated_at\":\"2019-07-20T07:05:06.841Z\"},\"T7avWL2sFWUIrL6z01GJww\":{\"token\":\"$2a$12$dYFs1claXaqrXcQSodRieuS.4cv0W7apXgPHPw2dfyHH/pwA7CABq\",\"expiry\":1564816023,\"last_token\":\"$2a$12$1FkNeyfS3UAEiIDpp9f1yuqLXO4HZuxuTFsd47wOlM/5UyY.XfDNu\",\"updated_at\":\"2019-07-20T07:07:03.046Z\"}}"], ["updated_at", "2019-07-20 07:07:03.485200"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 1188ms (Views: 0.7ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2019-07-20 00:07:04 -0700
+Processing by RestaurantsController#index as HTML
+  Parameters: {"restaurant"=>{}}
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."average_rating" DESC[0m
+  ↳ app/controllers/restaurants_controller.rb:3
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:07:34 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1", "restaurant"=>{}}
+  [1m[35mSQL (1.6ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (2.1ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 16ms (Views: 1.4ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-07-20 00:07:40 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"rating"=>"5", "user_comment"=>"right now", "restaurant_id"=>1}}
+HTTP Origin header (http://localhost:3000) didn't match request.base_url (http://localhost:3001)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mark@mark.com"], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[36mReview Create (3.1ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "user_comment", "user_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 5], ["user_comment", "right now"], ["user_id", 1], ["restaurant_id", 1], ["created_at", "2019-07-20 07:07:40.470059"], ["updated_at", "2019-07-20 07:07:40.470059"]]
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/review.rb:7
+  [1m[36mRestaurant Update (0.6ms)[0m  [1m[33mUPDATE "restaurants" SET "average_rating" = $1, "updated_at" = $2 WHERE "restaurants"."id" = $3[0m  [["average_rating", 3], ["updated_at", "2019-07-20 07:07:40.487339"], ["id", 1]]
+  ↳ app/models/review.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT MIN("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:8
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT MAX("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  ↳ app/models/review.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/review.rb:9
+  [1m[36mRestaurant Update (2.2ms)[0m  [1m[33mUPDATE "restaurants" SET "updated_at" = $1, "highest_rating" = $2 WHERE "restaurants"."id" = $3[0m  [["updated_at", "2019-07-20 07:07:40.506071"], ["highest_rating", 5], ["id", 1]]
+  ↳ app/models/review.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/review.rb:9
+No template found for ReviewsController#create, rendering head :no_content
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.9ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"qpPjjjZiK_X581t0opAkZw\":{\"token\":\"$2a$12$WbF0op3334/h6K3WPCYKX.zMP046r7tpqpeqVQGwmPcbvbfVqWAZi\",\"expiry\":1564781204,\"last_token\":\"$2a$12$Z/.HGWhaLSNVNQ/VddCgY.FgYahfl3Qo4YMzymbT34JTxL6Ykxj/u\",\"updated_at\":\"2019-07-19T21:26:44.128Z\"},\"SaqIxjx-oHUs80BqV8kzZQ\":{\"token\":\"$2a$12$cMkMDELEcJxaG5qYxyRqyOcq8PnqzfP4qZoZ7qHirAxNfvaDuJ0.G\",\"expiry\":1564781204,\"last_token\":\"$2a$12$SITKTeHHcTmmHH4AGjyhQewAQJ938sGE84gzbwPBxD5dC74pKNCrS\",\"updated_at\":\"2019-07-19T21:26:44.965Z\"},\"thPoFqLfeYYCSpa7L9Zm9A\":{\"token\":\"$2a$12$Br1it7bheAenEsKZhOSrYeFtCOygBq6aJogMGA7FpeBoy2qtlegby\",\"expiry\":1564781403,\"last_token\":\"$2a$12$fFUI44uhDpBIBqzju6yMw.yEMP5vfT4a8sWvjMFsfRKT4rKO7B1JO\",\"updated_at\":\"2019-07-19T21:30:03.195Z\"},\"YS3ZPLhS97UeGEvLGjbcgA\":{\"token\":\"$2a$12$WQ7whAoTC/GmZjdu3IMl6O5BazOJ2Lb7gu7h1z7nObevfQijfp7pS\",\"expiry\":1564811104,\"last_token\":\"$2a$12$GBDOEux8G6Fwr9ZPLmdUxOv0lqMoJmWwsB.pb/iGwn1xNN/PkxyaC\",\"updated_at\":\"2019-07-20T05:45:04.804Z\"},\"YMwL4jDddcPLg5rmAPMnUw\":{\"token\":\"$2a$12$BmN1oGWS/8I2LLU6ljcCBOcXOt5ANs2GgYziBZJQlx0cZtNcujrza\",\"expiry\":1564814024,\"last_token\":\"$2a$12$RiCSWyL9f408A792eeMN0.AH65jU/NVr2eqXxItRO890D1FZL3Jiu\",\"updated_at\":\"2019-07-20T06:33:44.791Z\"},\"rOpNOmP7WBYG6rfFH1iQHg\":{\"token\":\"$2a$12$BehRo9f70QMnLspFgGp2MuUa5uXaPCW7y2d15PtgfrZP2dfsOe1JC\",\"expiry\":1564815762,\"last_token\":\"$2a$12$FcmkOgVbyzb8CVvkHD8khe7yORTgwSIRyAL6ZqifzRZVH/HcjgKlO\",\"updated_at\":\"2019-07-20T07:02:42.036Z\"},\"VOcT_c2kVfSutBEVzGRRYA\":{\"token\":\"$2a$12$eZ6MO7PUBNnxAi1Vve5qyeZlIWZ6Jl2j7fz3EvHPBtROrzxlDcbsm\",\"expiry\":1564815826,\"last_token\":\"$2a$12$8nmjK1S5T1IdOzsE/W6D/eYGhEb0BL4eCSmt5Z3XfkL0Y1bIYxxGu\",\"updated_at\":\"2019-07-20T07:03:46.284Z\"},\"YCO45-h7K2ZIwPDWEOob1Q\":{\"token\":\"$2a$12$FlKCCszRcluYWfizDtnJleyb8V8qliBVZz8tKBwIOULhXNLDHgkXy\",\"expiry\":1564815906,\"last_token\":\"$2a$12$.ooZ1m4aIO9gIiL1ZPj5g.1V9AkdtHzyIYYr9jSIVtdqOcsU/d/yu\",\"updated_at\":\"2019-07-20T07:05:06.841Z\"},\"T7avWL2sFWUIrL6z01GJww\":{\"token\":\"$2a$12$mpkoxZGVRgvEkDedMMXsi./guUgKL9sKZFa1uPl70jBMGcfsqhU7u\",\"expiry\":1564816060,\"last_token\":\"$2a$12$dYFs1claXaqrXcQSodRieuS.4cv0W7apXgPHPw2dfyHH/pwA7CABq\",\"updated_at\":\"2019-07-20T07:07:40.545Z\"}}"], ["updated_at", "2019-07-20 07:07:41.003235"], ["id", 1]]
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/markdonahue/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 204 No Content in 954ms (ActiveRecord: 25.3ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:07:41 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1", "restaurant"=>{}}
+  [1m[35mSQL (0.9ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (4.0ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 27ms (Views: 3.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2019-07-20 00:42:05 -0700
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1", "restaurant"=>{}}
+  [1m[35mSQL (9.2ms)[0m  [1m[34mSELECT  DISTINCT reviews.created_at AS alias_0, "restaurants"."id" FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 ORDER BY reviews.created_at desc LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+  [1m[35mSQL (3.6ms)[0m  [1m[34mSELECT "restaurants"."id" AS t0_r0, "restaurants"."name" AS t0_r1, "restaurants"."address" AS t0_r2, "restaurants"."description" AS t0_r3, "restaurants"."user_id" AS t0_r4, "restaurants"."created_at" AS t0_r5, "restaurants"."updated_at" AS t0_r6, "restaurants"."average_rating" AS t0_r7, "restaurants"."highest_rating" AS t0_r8, "restaurants"."lowest_rating" AS t0_r9, "reviews"."id" AS t1_r0, "reviews"."rating" AS t1_r1, "reviews"."user_comment" AS t1_r2, "reviews"."owner_reply" AS t1_r3, "reviews"."user_id" AS t1_r4, "reviews"."restaurant_id" AS t1_r5, "reviews"."created_at" AS t1_r6, "reviews"."updated_at" AS t1_r7 FROM "restaurants" LEFT OUTER JOIN "reviews" ON "reviews"."restaurant_id" = "restaurants"."id" WHERE "restaurants"."id" = $1 AND "restaurants"."id" = $2 ORDER BY reviews.created_at desc[0m  [["id", 1], ["id", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12
+Completed 200 OK in 30ms (Views: 3.7ms | ActiveRecord: 12.9ms)
+
+
